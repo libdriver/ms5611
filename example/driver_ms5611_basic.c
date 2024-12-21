@@ -40,8 +40,8 @@ static ms5611_handle_t gs_handle;        /**< ms5611 handle */
 
 /**
  * @brief     basic example init
- * @param[in] interface is the chip interface
- * @param[in] addr_pin is the iic device address
+ * @param[in] interface chip interface
+ * @param[in] addr_pin iic device address
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -116,8 +116,8 @@ uint8_t ms5611_basic_init(ms5611_interface_t interface, ms5611_address_t addr_pi
 
 /**
  * @brief      basic example read
- * @param[out] *temperature_c points to a converted temperature buffer
- * @param[out] *pressure_mbar points to a converted pressure buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
+ * @param[out] *pressure_mbar pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

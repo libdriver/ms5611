@@ -350,7 +350,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -397,8 +397,8 @@ Functions</h2></td></tr>
 <p>get the iic address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>points to an address pin buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>pointer to an address pin buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -442,8 +442,8 @@ Functions</h2></td></tr>
 <p>get the chip interface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*interface</td><td>points to a chip interface buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*interface</td><td>pointer to a chip interface buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -487,8 +487,8 @@ Functions</h2></td></tr>
 <p>get pressure osr </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*osr</td><td>points to an osr buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*osr</td><td>pointer to an osr buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -532,8 +532,8 @@ Functions</h2></td></tr>
 <p>get temperature osr </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*osr</td><td>points to an osr buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*osr</td><td>pointer to an osr buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -567,7 +567,7 @@ Functions</h2></td></tr>
 <p>get chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to an ms5611 info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to an ms5611 info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -601,7 +601,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -655,9 +655,9 @@ Functions</h2></td></tr>
 <p>read the pressure </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_raw</td><td>points to a raw pressure buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_mbar</td><td>points to a converted pressure buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_raw</td><td>pointer to a raw pressure buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_mbar</td><td>pointer to a converted pressure buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -709,9 +709,9 @@ Functions</h2></td></tr>
 <p>read the temperature </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>points to a raw temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>points to a converted temperature buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>pointer to a raw temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>pointer to a converted temperature buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -775,11 +775,11 @@ Functions</h2></td></tr>
 <p>read the temperature and pressure </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>points to a raw temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>points to a converted temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_raw</td><td>points to a raw pressure buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_mbar</td><td>points to a converted pressure buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>pointer to a raw temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>pointer to a converted temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_raw</td><td>pointer to a raw pressure buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_mbar</td><td>pointer to a converted pressure buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -815,7 +815,7 @@ Functions</h2></td></tr>
 <p>reset the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -861,8 +861,8 @@ Functions</h2></td></tr>
 <p>set the iic address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the address pin </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>address pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -906,8 +906,8 @@ Functions</h2></td></tr>
 <p>set the chip interface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>is the chip interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>chip interface </td></tr>
   </table>
   </dd>
 </dl>
@@ -951,8 +951,8 @@ Functions</h2></td></tr>
 <p>set pressure osr </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">osr</td><td>is the set osr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">osr</td><td>set osr </td></tr>
   </table>
   </dd>
 </dl>
@@ -996,8 +996,8 @@ Functions</h2></td></tr>
 <p>set temperature osr </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an ms5611 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">osr</td><td>is the set osr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an ms5611 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">osr</td><td>set osr </td></tr>
   </table>
   </dd>
 </dl>
