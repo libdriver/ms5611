@@ -69,10 +69,10 @@
 
 /**
  * @brief      iic or spi interface read bytes
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[in]  reg is the iic register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data length
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[in]  reg iic register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -102,10 +102,10 @@ static uint8_t a_ms5611_iic_spi_read(ms5611_handle_t *handle, uint8_t reg, uint8
 
 /**
  * @brief     iic or spi interface write bytes
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] reg is the iic register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data length
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] reg iic register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -135,8 +135,8 @@ static uint8_t a_ms5611_iic_spi_write(ms5611_handle_t *handle, uint8_t reg, uint
 
 /**
  * @brief     crc check
- * @param[in] *n_prom points to a prom buffer
- * @param[in] crc is the checked crc
+ * @param[in] *n_prom pointer to a prom buffer
+ * @param[in] crc checked crc
  * @return    status code
  *            - 0 success
  *            - 1 failed
@@ -189,7 +189,7 @@ static uint8_t a_ms5611_crc_check(uint16_t *n_prom, uint8_t crc)
 
 /**
  * @brief     prom read
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 prom read failed
@@ -221,8 +221,8 @@ static uint8_t a_ms5611_prom_read(ms5611_handle_t *handle)
 
 /**
  * @brief     set the chip interface
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] interface is the chip interface
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] interface chip interface
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -242,8 +242,8 @@ uint8_t ms5611_set_interface(ms5611_handle_t *handle, ms5611_interface_t interfa
 
 /**
  * @brief      get the chip interface
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *interface points to a chip interface buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *interface pointer to a chip interface buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -263,8 +263,8 @@ uint8_t ms5611_get_interface(ms5611_handle_t *handle, ms5611_interface_t *interf
 
 /**
  * @brief     set the iic address pin
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] addr_pin is the address pin
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] addr_pin address pin
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -284,8 +284,8 @@ uint8_t ms5611_set_addr_pin(ms5611_handle_t *handle, ms5611_address_t addr_pin)
 
 /**
  * @brief      get the iic address pin
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *addr_pin points to an address pin buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *addr_pin pointer to an address pin buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -305,8 +305,8 @@ uint8_t ms5611_get_addr_pin(ms5611_handle_t *handle, ms5611_address_t *addr_pin)
 
 /**
  * @brief     set temperature osr
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] osr is the set osr
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] osr set osr
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -326,8 +326,8 @@ uint8_t ms5611_set_temperature_osr(ms5611_handle_t *handle, ms5611_osr_t osr)
 
 /**
  * @brief      get temperature osr
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *osr points to an osr buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *osr pointer to an osr buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -347,8 +347,8 @@ uint8_t ms5611_get_temperature_osr(ms5611_handle_t *handle, ms5611_osr_t *osr)
 
 /**
  * @brief     set pressure osr
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] osr is the set osr
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] osr set osr
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -368,8 +368,8 @@ uint8_t ms5611_set_pressure_osr(ms5611_handle_t *handle, ms5611_osr_t osr)
 
 /**
  * @brief      get pressure osr
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *osr points to an osr buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *osr pointer to an osr buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -389,7 +389,7 @@ uint8_t ms5611_get_pressure_osr(ms5611_handle_t *handle, ms5611_osr_t *osr)
 
 /**
  * @brief     reset the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 reset failed
@@ -424,11 +424,11 @@ uint8_t ms5611_reset(ms5611_handle_t *handle)
 
 /**
  * @brief      read the temperature and pressure
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_c points to a converted temperature buffer
- * @param[out] *pressure_raw points to a raw pressure buffer
- * @param[out] *pressure_mbar points to a converted pressure buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
+ * @param[out] *pressure_raw pointer to a raw pressure buffer
+ * @param[out] *pressure_mbar pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature pressure failed
@@ -569,9 +569,9 @@ uint8_t ms5611_read_temperature_pressure(ms5611_handle_t *handle, uint32_t *temp
 
 /**
  * @brief      read the temperature
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_c points to a converted temperature buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed
@@ -652,9 +652,9 @@ uint8_t ms5611_read_temperature(ms5611_handle_t *handle, uint32_t *temperature_r
 
 /**
  * @brief      read the pressure
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *pressure_raw points to a raw pressure buffer
- * @param[out] *pressure_mbar points to a converted pressure buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *pressure_raw pointer to a raw pressure buffer
+ * @param[out] *pressure_mbar pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read pressure failed
@@ -791,7 +791,7 @@ uint8_t ms5611_read_pressure(ms5611_handle_t *handle, uint32_t *pressure_raw, fl
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 close failed
@@ -829,7 +829,7 @@ static uint8_t a_ms5611_close(ms5611_handle_t *handle)
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 spi or iic initialization failed
@@ -947,7 +947,7 @@ uint8_t ms5611_init(ms5611_handle_t *handle)
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic or spi deinit failed
@@ -992,10 +992,10 @@ uint8_t ms5611_deinit(ms5611_handle_t *handle)
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] reg is the register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data buffer length
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] reg register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data buffer length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -1019,10 +1019,10 @@ uint8_t ms5611_set_reg(ms5611_handle_t *handle, uint8_t reg, uint8_t *buf, uint1
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[in]  reg is the register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data buffer length
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[in]  reg register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data buffer length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -1046,7 +1046,7 @@ uint8_t ms5611_get_reg(ms5611_handle_t *handle, uint8_t reg, uint8_t *buf, uint1
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an ms5611 info structure
+ * @param[out] *info pointer to an ms5611 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL

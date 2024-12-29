@@ -147,88 +147,88 @@ typedef struct ms5611_info_s
 
 /**
  * @brief     initialize ms5611_handle_t structure
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] STRUCTURE is ms5611_handle_t
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] STRUCTURE ms5611_handle_t
  * @note      none
  */
 #define DRIVER_MS5611_LINK_INIT(HANDLE, STRUCTURE)         memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link iic_init function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to an iic_init function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to an iic_init function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_IIC_INIT(HANDLE, FUC)          (HANDLE)->iic_init = FUC
 
 /**
  * @brief     link iic_deinit function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to an iic_deinit function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_IIC_DEINIT(HANDLE, FUC)        (HANDLE)->iic_deinit = FUC
 
 /**
  * @brief     link iic_read function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to an iic_read function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to an iic_read function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_IIC_READ(HANDLE, FUC)          (HANDLE)->iic_read = FUC
 
 /**
  * @brief     link iic_write function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to an iic_write function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to an iic_write function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_IIC_WRITE(HANDLE, FUC)         (HANDLE)->iic_write = FUC
 
 /**
  * @brief     link spi_init function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a spi_init function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a spi_init function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_SPI_INIT(HANDLE, FUC)          (HANDLE)->spi_init = FUC
 
 /**
  * @brief     link spi_deinit function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a spi_deinit function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a spi_deinit function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_SPI_DEINIT(HANDLE, FUC)        (HANDLE)->spi_deinit = FUC
 
 /**
  * @brief     link spi_read function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a spi_read function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a spi_read function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_SPI_READ(HANDLE, FUC)          (HANDLE)->spi_read = FUC
 
 /**
  * @brief     link spi_write function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a spi_write function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a spi_write function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_SPI_WRITE(HANDLE, FUC)         (HANDLE)->spi_write = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_DELAY_MS(HANDLE, FUC)          (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to an ms5611 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to an ms5611 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_MS5611_LINK_DEBUG_PRINT(HANDLE, FUC)       (HANDLE)->debug_print = FUC
@@ -246,7 +246,7 @@ typedef struct ms5611_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an ms5611 info structure
+ * @param[out] *info pointer to an ms5611 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -256,8 +256,8 @@ uint8_t ms5611_info(ms5611_info_t *info);
 
 /**
  * @brief     set the chip interface
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] interface is the chip interface
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] interface chip interface
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -267,8 +267,8 @@ uint8_t ms5611_set_interface(ms5611_handle_t *handle, ms5611_interface_t interfa
 
 /**
  * @brief      get the chip interface
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *interface points to a chip interface buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *interface pointer to a chip interface buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -278,8 +278,8 @@ uint8_t ms5611_get_interface(ms5611_handle_t *handle, ms5611_interface_t *interf
 
 /**
  * @brief     set the iic address pin
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] addr_pin is the address pin
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] addr_pin address pin
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -289,8 +289,8 @@ uint8_t ms5611_set_addr_pin(ms5611_handle_t *handle, ms5611_address_t addr_pin);
 
 /**
  * @brief      get the iic address pin
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *addr_pin points to an address pin buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *addr_pin pointer to an address pin buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -300,8 +300,8 @@ uint8_t ms5611_get_addr_pin(ms5611_handle_t *handle, ms5611_address_t *addr_pin)
 
 /**
  * @brief     set temperature osr
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] osr is the set osr
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] osr set osr
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -311,8 +311,8 @@ uint8_t ms5611_set_temperature_osr(ms5611_handle_t *handle, ms5611_osr_t osr);
 
 /**
  * @brief      get temperature osr
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *osr points to an osr buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *osr pointer to an osr buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -322,8 +322,8 @@ uint8_t ms5611_get_temperature_osr(ms5611_handle_t *handle, ms5611_osr_t *osr);
 
 /**
  * @brief     set pressure osr
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] osr is the set osr
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] osr set osr
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -333,8 +333,8 @@ uint8_t ms5611_set_pressure_osr(ms5611_handle_t *handle, ms5611_osr_t osr);
 
 /**
  * @brief      get pressure osr
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *osr points to an osr buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *osr pointer to an osr buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -344,7 +344,7 @@ uint8_t ms5611_get_pressure_osr(ms5611_handle_t *handle, ms5611_osr_t *osr);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 spi or iic initialization failed
@@ -358,7 +358,7 @@ uint8_t ms5611_init(ms5611_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic or spi deinit failed
@@ -371,11 +371,11 @@ uint8_t ms5611_deinit(ms5611_handle_t *handle);
 
 /**
  * @brief      read the temperature and pressure
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_c points to a converted temperature buffer
- * @param[out] *pressure_raw points to a raw pressure buffer
- * @param[out] *pressure_mbar points to a converted pressure buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
+ * @param[out] *pressure_raw pointer to a raw pressure buffer
+ * @param[out] *pressure_mbar pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature pressure failed
@@ -388,9 +388,9 @@ uint8_t ms5611_read_temperature_pressure(ms5611_handle_t *handle, uint32_t *temp
 
 /**
  * @brief      read the temperature
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_c points to a converted temperature buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed
@@ -402,9 +402,9 @@ uint8_t ms5611_read_temperature(ms5611_handle_t *handle, uint32_t *temperature_r
 
 /**
  * @brief      read the pressure
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[out] *pressure_raw points to a raw pressure buffer
- * @param[out] *pressure_mbar points to a converted pressure buffer
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[out] *pressure_raw pointer to a raw pressure buffer
+ * @param[out] *pressure_mbar pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read pressure failed
@@ -416,7 +416,7 @@ uint8_t ms5611_read_pressure(ms5611_handle_t *handle, uint32_t *pressure_raw, fl
 
 /**
  * @brief     reset the chip
- * @param[in] *handle points to an ms5611 handle structure
+ * @param[in] *handle pointer to an ms5611 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 reset failed
@@ -439,10 +439,10 @@ uint8_t ms5611_reset(ms5611_handle_t *handle);
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to an ms5611 handle structure
- * @param[in] reg is the register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data buffer length
+ * @param[in] *handle pointer to an ms5611 handle structure
+ * @param[in] reg register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data buffer length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -454,10 +454,10 @@ uint8_t ms5611_set_reg(ms5611_handle_t *handle, uint8_t reg, uint8_t *buf, uint1
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to an ms5611 handle structure
- * @param[in]  reg is the register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data buffer length
+ * @param[in]  *handle pointer to an ms5611 handle structure
+ * @param[in]  reg register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data buffer length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
