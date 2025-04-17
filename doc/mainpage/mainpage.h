@@ -1,10 +1,10 @@
 /**
  * @mainpage  LibDriver MS5611
- * @brief     LibDriver MS5611 is a full function driver of MS5611 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver MS5611 is a full-featured driver of MS5611 and it can run in both MCU and Linux platform.
  * @version   1.0.0
  * @author    Shifeng Li
  *
- * <h3>history</h3>
+ * <h3>History</h3>
  * <table>
  * <tr><th>Date        <th>Version  <th>Author      <th>Description
  * <tr><td>2024/03/31  <td>1.0      <td>Shifeng Li  <td>first upload

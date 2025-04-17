@@ -10,7 +10,7 @@
 
 The MS5611 is a new generation of high resolution altimeter sensors from MEAS Switzerland with SPI and I2C bus interface. This barometric pressure sensor is optimized for altimeters and variometers with an altitude resolution of 10 cm.The sensor module includes a high linearity pressure sensor and an ultra-low power 24 bit ΔΣ ADC with internal factory calibrated coefficients. It provides a precise digital 24 Bit pressure and temperature value and different operation modes that allow the user to optimize for conversion speed and current consumption. A high resolution temperature output allows the implementation of an altimeter/thermometer function without any additional sensor.The MS5611 can be interfaced to virtually any micro controller. The communication protocol is simple, without the need of programming internal registers in the device. Small dimensions of only 5.0 mm x 3.0 mm and a height of only 1.0 mm allow for integration in mobile devices. This new sensor module generation is based on leading MEMS technology and latest benefits from MEAS Switzerland proven experience and know how in high volume manufacturing of altimeter modules, which have been widely used for over a decade. The sensing principle employed leads to very low hysteresis and high stability of both pressure and temperature signal.
 
-LibDriver MS5611 is a full function driver of MS5611 launched by LibDriver.It provides pressure and temperature reading and other functions. LibDriver is MISRA compliant.
+LibDriver MS5611 is a full-featured driver of MS5611 launched by LibDriver.It provides pressure and temperature reading and other functions. LibDriver is MISRA compliant.
 
 ### Table of Contents
 
