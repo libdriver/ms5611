@@ -60,7 +60,7 @@ We use '\n' to wrap lines.If your serial port assistant displays exceptions (e.g
    ms5611 (-p | --port)
    ```
 
-5. Run ms5611 read test, num means the test times. 
+4. Run ms5611 read test, num means the test times. 
 
    ```shell
    ms5611 (-t read | --test=read) [--csb=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]

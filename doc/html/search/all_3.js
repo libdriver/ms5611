@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['libdriver_20ms5611_34',['LibDriver MS5611',['../index.html',1,'']]]
+  ['example_20driver_20function_0',['ms5611 example driver function',['../group__ms5611__example__driver.html',1,'']]],
+  ['extern_20driver_20function_1',['ms5611 extern driver function',['../group__ms5611__extern__driver.html',1,'']]]
 ];
