@@ -1,3 +1,9 @@
+## 1.0.8 (2026-01-10)
+
+## Bug Fixes
+
+- fix data command errors
+
 ## 1.0.7 (2025-10-26)
 
 ## Features

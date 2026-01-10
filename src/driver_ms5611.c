@@ -459,7 +459,7 @@ uint8_t ms5611_read_temperature_pressure(ms5611_handle_t *handle, uint32_t *temp
         return 3;                                                                                        /* return error */
     }
 
-    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_TEMPERATURE, NULL, 0);                           /* write config */
+    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_TEMPERATURE + handle->temperature_osr, NULL, 0); /* write config */
     if (res != 0)                                                                                        /* check result */
     {
         handle->debug_print("ms5611: start temperature failed.\n");                                      /* start temperature failed */
@@ -496,26 +496,26 @@ uint8_t ms5611_read_temperature_pressure(ms5611_handle_t *handle, uint32_t *temp
     *temperature_raw = ((uint32_t)(buf[0]) << 16) | ((uint32_t)(buf[1]) << 8) |
                        ((uint32_t)(buf[2]) << 0);                                                        /* set temperature raw */
 
-    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_PRESSURE, NULL, 0);                              /* write config */
+    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_PRESSURE + handle->pressure_osr, NULL, 0);       /* write config */
     if (res != 0)                                                                                        /* check result */
     {
         handle->debug_print("ms5611: start pressure failed.\n");                                         /* start pressure failed */
 
         return 1;                                                                                        /* return error */
     }
-    if (handle->temperature_osr == MS5611_OSR_256)                                                       /* osr 256 */
+    if (handle->pressure_osr == MS5611_OSR_256)                                                          /* osr 256 */
     {
         handle->delay_ms(1);                                                                             /* delay 1ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_512)                                                  /* osr 512 */
+    else if (handle->pressure_osr == MS5611_OSR_512)                                                     /* osr 512 */
     {
         handle->delay_ms(2);                                                                             /* delay 2ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_1024)                                                 /* osr 1024 */
+    else if (handle->pressure_osr == MS5611_OSR_1024)                                                    /* osr 1024 */
     {
         handle->delay_ms(3);                                                                             /* delay 3ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_2048)                                                 /* osr 2048 */
+    else if (handle->pressure_osr == MS5611_OSR_2048)                                                    /* osr 2048 */
     {
         handle->delay_ms(5);                                                                             /* delay 5ms */
     }
@@ -596,7 +596,9 @@ uint8_t ms5611_read_temperature(ms5611_handle_t *handle, uint32_t *temperature_r
         return 3;                                                                       /* return error */
     }
 
-    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_TEMPERATURE, NULL, 0);          /* write config */
+    res = a_ms5611_iic_spi_write(handle, 
+                                 MS5611_COMMAND_TEMPERATURE + handle->temperature_osr,
+                                 NULL, 0);                                              /* write config */
     if (res != 0)                                                                       /* check result */
     {
         handle->debug_print("ms5611: start temperature failed.\n");                     /* start temperature failed */
@@ -684,7 +686,7 @@ uint8_t ms5611_read_pressure(ms5611_handle_t *handle, uint32_t *pressure_raw, fl
         return 3;                                                                                        /* return error */
     }
 
-    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_TEMPERATURE, NULL, 0);                           /* write config */
+    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_TEMPERATURE + handle->temperature_osr, NULL, 0); /* write config */
     if (res != 0)                                                                                        /* check result */
     {
         handle->debug_print("ms5611: start temperature failed.\n");                                      /* start temperature failed */
@@ -721,26 +723,26 @@ uint8_t ms5611_read_pressure(ms5611_handle_t *handle, uint32_t *pressure_raw, fl
     temperature_raw = ((uint32_t)(buf[0]) << 16) | ((uint32_t)(buf[1]) << 8) |
                       ((uint32_t)(buf[2]) << 0);                                                         /* set temperature raw */
 
-    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_PRESSURE, NULL, 0);                              /* write config */
+    res = a_ms5611_iic_spi_write(handle, MS5611_COMMAND_PRESSURE + handle->pressure_osr, NULL, 0);       /* write config */
     if (res != 0)                                                                                        /* check result */
     {
         handle->debug_print("ms5611: start pressure failed.\n");                                         /* start pressure failed */
 
         return 1;                                                                                        /* return error */
     }
-    if (handle->temperature_osr == MS5611_OSR_256)                                                       /* osr 256 */
+    if (handle->pressure_osr == MS5611_OSR_256)                                                          /* osr 256 */
     {
         handle->delay_ms(1);                                                                             /* delay 1ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_512)                                                  /* osr 512 */
+    else if (handle->pressure_osr == MS5611_OSR_512)                                                     /* osr 512 */
     {
         handle->delay_ms(2);                                                                             /* delay 2ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_1024)                                                 /* osr 1024 */
+    else if (handle->pressure_osr == MS5611_OSR_1024)                                                    /* osr 1024 */
     {
         handle->delay_ms(3);                                                                             /* delay 3ms */
     }
-    else if (handle->temperature_osr == MS5611_OSR_2048)                                                 /* osr 2048 */
+    else if (handle->pressure_osr == MS5611_OSR_2048)                                                    /* osr 2048 */
     {
         handle->delay_ms(5);                                                                             /* delay 5ms */
     }
