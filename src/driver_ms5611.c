@@ -539,18 +539,18 @@ uint8_t ms5611_read_temperature_pressure(ms5611_handle_t *handle, uint32_t *temp
           (int64_t)handle->coeff[MS5611_TEMP_COEFF_OF_TEMPERATURE_INDEX] >> 23);                         /* set temp */
     if (temp < 2000)                                                                                     /* check temp */
     {
-        t2 = (3 * ((int64_t)dt * (int64_t)dt)) >> 33;                                                    /* set t2 */
-        off2 = 61 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000) / 16;                                /* set off2 */
-        sens2 = 29 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000) / 16;                               /* set sens2 */
+        t2 = ((int64_t)dt * (int64_t)dt) >> 31;                                                          /* set t2 */
+        off2 = (5 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000)) >> 1;                               /* set off2 */
+        sens2 = (5 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000)) >> 2;                              /* set sens2 */
         if (temp < -1500)                                                                                /* if < -1500 */
         {
-            off2 += 17 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                /* set off2 */
-            sens2 += 9 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                /* set sens2 */
+            off2 += 7 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                 /* set off2 */
+            sens2 += (11 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500)) >> 1;                        /* set sens2 */
         }
     }
     else
     {
-        t2 = (5 * ((int64_t)dt * (int64_t)dt)) >> 38;                                                    /* set t2 */
+        t2 = 0;                                                                                          /* init t2 0 */
         off2 = 0;                                                                                        /* init off2 0 */
         sens2 = 0;                                                                                       /* init sens2 0 */
     }
@@ -641,11 +641,11 @@ uint8_t ms5611_read_temperature(ms5611_handle_t *handle, uint32_t *temperature_r
           (int64_t)handle->coeff[MS5611_TEMP_COEFF_OF_TEMPERATURE_INDEX] >> 23);        /* set temp */
     if (temp < 2000)                                                                    /* check temp */
     {
-        t2 = (3 * ((int64_t)dt * (int64_t)dt)) >> 33;                                   /* set t2 */
+        t2 = ((int64_t)dt * (int64_t)dt) >> 31;                                         /* set t2 */
     }
     else
     {
-        t2 = (5 * ((int64_t)dt * (int64_t)dt)) >> 38;                                   /* set t2 */
+        t2 = 0;                                                                         /* init t2 0 */
     }
     *temperature_c = ((float)temp - (float)t2) / 100.0f;                                /* get real temperature */
 
@@ -766,12 +766,12 @@ uint8_t ms5611_read_pressure(ms5611_handle_t *handle, uint32_t *pressure_raw, fl
           (int64_t)handle->coeff[MS5611_TEMP_COEFF_OF_TEMPERATURE_INDEX] >> 23);                         /* set temp */
     if (temp < 2000)                                                                                     /* check temp */
     {
-        off2 = 61 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000) / 16;                                /* set off2 */
-        sens2 = 29 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000) / 16;                               /* set sens2 */
+        off2 = (5 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000)) >> 1;                               /* set off2 */
+        sens2 = (5 * ((int64_t)temp - 2000) * ((int64_t)temp - 2000)) >> 2;                              /* set sens2 */
         if (temp < -1500)                                                                                /* if < -1500 */
         {
-            off2 += 17 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                /* set off2 */
-            sens2 += 9 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                /* set sens2 */
+            off2 += 7 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500);                                 /* set off2 */
+            sens2 += (11 * ((int64_t)temp + 1500) * ((int64_t)temp + 1500)) >> 1;                        /* set sens2 */
         }
     }
     else
